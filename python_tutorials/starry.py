@@ -1,4 +1,4 @@
-from turtle import *
+from turtle_game import *
 from random import *
 
 bgcolor("black")

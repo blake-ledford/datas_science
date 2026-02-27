@@ -1,4 +1,4 @@
-from turtle import *
+from turtle_game import *
 
 diameter = 40 #pixels
 pop_diameter = 100 #pixels
