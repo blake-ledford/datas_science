@@ -24,12 +24,12 @@ class Game:
 
     def select_object(self, index):
         selected_object = self.room.game_objects[index]
-        prompt = self.get_room_prompt(selected_object.name)
+        prompt = self.get_object_interaction_string(selected_object.name)
         interaction = input(prompt)
         print(interaction)
         return
 
-    def get_object_interaction_string(name):
+    def get_object_interaction_string(self, name):
 
         return (f"How do you want to interact with {name}?\n"
                 f"1. Look\n2. Touch\n3. Smell")
