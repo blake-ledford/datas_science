@@ -14,6 +14,7 @@ class Room:
 
         return object_names
 
+### Unit test for room class
 from game_object import GameObject
 
 class RoomTests:
@@ -33,6 +34,6 @@ class RoomTests:
         print(self.room_1.get_game_object_names() == ["Sweater", "Chair"])
         print(self.room_2.get_game_object_names() == [])
 
-tests = RoomTests()
+#tests = RoomTests()
 #tests.test_check_code()
-tests.check_get_game_object_names()
+#tests.check_get_game_object_names()
