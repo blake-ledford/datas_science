@@ -13,7 +13,17 @@ class Game:
         selection: int = int(input(prompt))
         if selection >= 1 and selection <= 5:
             self.select_object(selection - 1)
-        self.take_turn()
+            self.take_turn()
+        else:
+            is_code_correct = self.guess_code(selection)
+            if is_code_correct:
+                print("You guessed the code!")
+            else:
+                if self.attempts >= 3:
+                    print("You lost!\n Better luck next time!")
+                else:
+                    print(f"Incorrect, you have used {self.attempts} /3 attempts.\n")
+                    self.take_turn()
 
     def get_room_prompt(self):
         prompt = "Enter the 3 digit lock code or choose an item to interact with:\n"
@@ -43,3 +53,10 @@ class Game:
             return object.touch()
         else:
             return object.sniff()
+
+    def guess_code(self, code):
+        if self.room.check_code(code):
+            return True
+        else:
+            self.attempts += 1
+            return False
